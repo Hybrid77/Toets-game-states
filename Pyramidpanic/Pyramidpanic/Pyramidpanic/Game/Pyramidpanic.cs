@@ -52,6 +52,11 @@ namespace PyramidPanic
         private ScoreScene scoreScene;
         #endregion
 
+        #region QuitScene var.
+        // Dit maakt een variable aan die verwijst naar de GameOverScene
+        private QuitScene quitScene;
+        #endregion
+
         #region IState var.
         //maak een variable iState aan van het typen interface IState.
         private IState iState; 
@@ -141,6 +146,16 @@ namespace PyramidPanic
 
         }
 
+        //properties
+        //maakt de interface variable helpScene beschikbaar buiten de class door middel van 
+        // een property HelpScene
+        public QuitScene QuitScene
+        {
+
+            get { return this.quitScene; }
+
+        }
+
 
           
         //dit is de constructor.
@@ -218,6 +233,13 @@ namespace PyramidPanic
             //Dit doe je door:
             // de constructor aan te roepen van de LoadScene class.
             this.scoreScene = new ScoreScene(this);
+            #endregion
+
+            #region Object that calls the class "QuitScene".
+            // We maken nu het object/ instantie aan van het type loadscreen.
+            //Dit doe je door:
+            // de constructor aan te roepen van de LoadScene class.
+            this.quitScene = new QuitScene(this);
             #endregion
 
             //hier staat welke Scene word aangeroepen.
